@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Quick Tip</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <h1>{{ title }}</h1>
+    </header>
+    <main>
+      <section class="tip-input">
+        <input v-model.number="total" type="number" step=".01" placeholder="Current total">
+      </section>
+      <section class="results">
+        <section v-if="total" class="tip-card">
+          <p class="percent">{{ tip.percent[0] * 100 }}%</p>
+          <p>{{ headings[0] }}</p>
+          <p>${{ tipUpdater[0] }}</p>
+          <p>{{ headings[1] }}</p>
+          <p>${{ tipPlusTotalUpdater[0] }}</p>
+        </section>
+        <section v-if="total" class="tip-card">
+          <p class="percent">{{ tip.percent[1] * 100 }}%</p>
+          <p>{{ headings[0] }}</p>
+          <p>${{ tipUpdater[1] }}</p>
+          <p>{{ headings[1] }}</p>
+          <p>${{ tipPlusTotalUpdater[1] }}</p>
+        </section>
+        <section v-if="total" class="tip-card">
+          <p class="percent">{{ tip.percent[2] * 100 }}%</p>
+          <p>{{ headings[0] }}</p>
+          <p>${{ tipUpdater[2] }}</p>
+          <p>{{ headings[1] }}</p>
+          <p>${{ tipPlusTotalUpdater[2] }}</p>
+        </section>
+        <section v-if="total" class="tip-card">
+          <p class="percent">{{ tip.percent[3] * 100 }}%</p>
+          <p>{{ headings[0] }}</p>
+          <p>${{ tipUpdater[3] }}</p>
+          <p>{{ headings[1] }}</p>
+          <p>${{ tipPlusTotalUpdater[3] }}</p>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <p>
+        Tip Nicely!
+      </p>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+
+</html>
